@@ -1,36 +1,22 @@
 #include "main.h"
-
 /**
-  * cap_string - The main  function
-  *
-  * @str: Function parameter of the string
-  *
-  * Return: Void.
-  */
-char *cap_string(char *str)
-{
-	int count = 0;
+ * string_toupper - main function
+ *
+ * @n: String input
+ *
+ * Return: dest
+ */
 
-	while (str[count])
+char *string_toupper(char *n)
+{
+	int i;
+
+	i = 0;
+	while (n[i] != '\0')
 	{
-	while (!(str[count] >= 'a' && str[count] <= 'z'))
-		count++;
-	if (str[count - 1] == ' ' ||
-	str[count - 1] == '\t' ||
-	str[count - 1] == '\n' ||
-	str[count - 1] == ',' ||
-	str[count - 1] == ';' ||
-	str[count - 1] == '.' ||
-	str[count - 1] == '!' ||
-	str[count - 1] == '?' ||
-	str[count - 1] == '"' ||
-	str[count - 1] == '(' ||
-	str[count - 1] == ')' ||
-	str[count - 1] == '{' ||
-	str[count - 1] == '}' ||
-	count == 0)
-	str[count] -= 32;
-	count++;
+	if (n[i] >= 'a' && n[i] <= 'z')
+	n[i] = n[i] - 32;
+	i++;
 	}
-	return (str);
+return (n);
 }
