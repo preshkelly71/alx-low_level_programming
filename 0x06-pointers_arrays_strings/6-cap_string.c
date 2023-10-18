@@ -1,28 +1,36 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
-  *leet - main function
+  * cap_string - The main  function
   *
-  * @n: Function parameter
+  * @str: Function parameter of the string
   *
-  *Return: value of n
- */
-
-char *leet(char *n)
+  * Return: Void.
+  */
+char *cap_string(char *str)
 {
-	int k, r;
-	char s1[] = "aAeEoOtTlL";
-	char s2[] = "4433007711";
+	int count = 0;
 
-	for (k = 0; n[k] != '\0'; k++)
+	while (str[count])
 	{
-	for (r = 0; r < 10; r++)
-	{
-	if (n[k] == s1[r])
-	{
-	n[k] = s2[r];
+	while (!(str[count] >= 'a' && str[count] <= 'z'))
+		count++;
+	if (str[count - 1] == ' ' ||
+	str[count - 1] == '\t' ||
+	str[count - 1] == '\n' ||
+	str[count - 1] == ',' ||
+	str[count - 1] == ';' ||
+	str[count - 1] == '.' ||
+	str[count - 1] == '!' ||
+	str[count - 1] == '?' ||
+	str[count - 1] == '"' ||
+	str[count - 1] == '(' ||
+	str[count - 1] == ')' ||
+	str[count - 1] == '{' ||
+	str[count - 1] == '}' ||
+	count == 0)
+	str[count] -= 32;
+	count++;
 	}
-	}
-	}
-	return (n);
+	return (str);
 }
