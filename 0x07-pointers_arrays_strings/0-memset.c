@@ -3,7 +3,7 @@
 /**
   * _memset - main function of the prototype
   *
-  * @b: The value used to fill the memory
+  * @d: The value used to fill the memory
   *
   * @s: Function paramater
   *
